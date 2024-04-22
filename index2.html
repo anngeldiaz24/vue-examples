@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Examples</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="h-full grid place-items-center mt-10">
+    <div id="app">
+        <button 
+        v-bind:class="active 
+            ? 'btn text-red-500 bg-red-100 rounded' 
+            : 'btn text-green-500 bg-green-100 rounded'" 
+            v-on:click="toggle">
+            Click me!
+        </button>
+    </div>
+
+
+    <script>
+        Vue.createApp({
+            data() {
+               return {
+                active: false
+               } 
+            },
+
+            methods: {
+                toggle () {
+                    //True
+                    this.active = ! this.active;
+                }
+        
+            }
+
+        }).mount('#app');
+    </script>
+</body>
+</html>
